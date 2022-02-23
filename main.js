@@ -1,6 +1,7 @@
-function nonConstructibleChange(coins) {
-    coins.sort((a,b) => a - b);
-    
+function nonConstructibleChange(_coins) {
+    const coins = _coins.filter(v => v > 0);
+    coins.sort((a,b) => a - b)
+
     let currentValue = 0;
     for (let coin of coins) {
         if (coin > currentValue + 1) return currentValue + 1;
@@ -10,6 +11,7 @@ function nonConstructibleChange(coins) {
     
     return currentValue + 1;
 }
+
 
 function sortSquaresArray(arr){
     return arr.map(v => v * v).sort((a,b) => a-b)
